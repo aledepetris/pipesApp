@@ -7,7 +7,7 @@
 
 <div class="grid">
   <div class="col md:col-6">
-    <p-fieldset legend="i18nSelect Pipe" [toggleable]="true">
+    <p-fieldset legend="i18nSelect Pipe" [toggleable]="true" [collapsed]="true">
       <p>
         Saludos {{ nombre }}, es un placer
         {{ genero | i18nSelect:invitacionMap }}
@@ -21,7 +21,7 @@
     </p-fieldset>
   </div>
   <div class="col md:col-6">
-    <p-fieldset legend="i18nPlural Pipe" [toggleable]="true">
+    <p-fieldset legend="i18nPlural Pipe" [toggleable]="true" [collapsed]="true">
       <p>
         Actualmente tenemos {{ clientes.length | i18nPlural:clientesMap }}
       </p>
@@ -30,6 +30,42 @@
                 (click)="borrarCliente()"
                 >
       </p-button>
+    </p-fieldset>
+  </div>
+
+  <div class="col md:col-6">
+    <p-fieldset legend="Json Pipe" [toggleable]="true" [collapsed]="true">
+      <pre>{{ heroes | json }}</pre>
+    </p-fieldset>
+  </div>
+
+  <div class="col md:col-6">
+    <p-fieldset legend="Slice Pipe" [toggleable]="true" [collapsed]="true">
+      <b>Original</b>
+      <pre> {{ clientes }}</pre>
+
+      <b>Si uso el boton de borrar cliente..</b>
+      <pre> {{ clientes | slice:0 }}</pre>
+    </p-fieldset>
+  </div>
+
+  <div class="col md:col-6">
+    <p-fieldset legend="KeyValue Pipe" [toggleable]="true" [collapsed]="true">
+      <ul>
+        <li *ngFor="let item of persona | keyvalue ">
+          <b>{{ item.key | titlecase }}:</b> {{ item.value }}
+        </li>
+      </ul>
+    </p-fieldset>
+  </div>
+
+  <div class="col md:col-6">
+    <p-fieldset legend="Async Pipe" [toggleable]="true" [collapsed]="false">
+      <b>Tiempo malgastado aqui:</b><pre> {{ miObservable | async }}</pre>
+      <b>Promesa:</b>
+      <pre *ngIf="!(valorPromesa | async)"> Resolviendo promesa... </pre>
+      <pre> {{ valorPromesa | async }}</pre>
+
     </p-fieldset>
   </div>
 </div>
