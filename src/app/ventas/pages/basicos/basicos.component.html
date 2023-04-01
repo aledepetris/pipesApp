@@ -1,1 +1,71 @@
-<p>basicos works!</p>
+<div class="text-layout">
+  <h1>Pipes Básicos</h1>
+  <h3>
+    Pipes incluídos en Angular - Usualmente en el 'Common Module'.
+  </h3>
+  <p>
+    Texto Original a transformar: <b>{{ nombreCompleto }}</b>
+  </p>
+</div>
+
+<div class="grid">
+
+  <div class="col-4">
+    <p-card header="uppercase"
+            subheader="Transforma el texto en mayúsculas.">
+        {{ nombreCompleto | uppercase }}
+    </p-card>
+  </div>
+
+  <div class="col-4">
+    <p-card header="lowercase"
+            subheader="Transforma el texto en minúsculas.">
+        {{ nombreCompleto | lowercase }}
+    </p-card>
+  </div>
+
+  <div class="col-4">
+    <p-card header="titlecase"
+            subheader="Transforma el texto en título capitalizado.">
+        {{ nombreCompleto | titlecase }}
+    </p-card>
+  </div>
+</div>
+
+<div class="text-layout">
+  <h1>Date | Fecha | Pipe</h1>
+  <h3>
+    Pipe para mostrar las fechas
+  </h3>
+</div>
+
+<div class="grid">
+
+  <div class="col-6">
+    <p-card>
+      <ul>
+        <li> fecha </li>
+        <li> fecha | date </li>
+        <li> fecha | date:'short' </li>
+        <li> fecha | date:'long' </li>
+        <li> fecha | date:'yyyy LLLL cccc dd' </li>
+        <li> fecha | date:'MMMM' </li>
+        <li> fecha | date:'MMMM dd, yyyy' </li>
+      </ul>
+    </p-card>
+  </div>
+
+  <div class="col-6">
+    <p-card>
+      <ul>
+        <li> {{ fecha }} </li>
+        <li> {{ fecha | date }} </li>
+        <li> {{ fecha | date:'short' }} </li>
+        <li> {{ fecha | date:'long' }} </li>
+        <li> {{ fecha | date:'yyyy LLLL cccc dd' }} </li>
+        <li> {{ fecha | date:'MMMM' }} </li>
+        <li> {{ fecha | date:'MMMM dd, yyyy' }} </li>
+      </ul>
+    </p-card>
+  </div>
+</div>
